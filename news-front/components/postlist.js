@@ -41,9 +41,7 @@ export default function PostList({
                 ? "aspect-[5/4]"
                 : "aspect-square"
             )}
-            href={`/post/${pathPrefix ? `${pathPrefix}/` : ""}${
-              post.slug.current
-            }`}>
+            href={`/newsfeed/001`}>
             {imageProps ? (
               <Image
                 src={imageProps}
@@ -55,7 +53,7 @@ export default function PostList({
                 priority={preloadImage ? true : false}
                 className="object-cover transition-all"
                 fill
-                sizes="(max-width: 768px) 30vw, 33vw"
+                sizes="(max-width: 900px) 30vw, 33vw"
               />
             ) : (
               <span className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 text-gray-200">
@@ -84,9 +82,7 @@ export default function PostList({
                 "mt-2    dark:text-white"
               )}>
               <Link
-                href={`/post/${pathPrefix ? `${pathPrefix}/` : ""}${
-                  post.slug.current
-                }`}>
+                href={`/newsfeed/001`}>
                 <span
                   className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom
       bg-no-repeat
@@ -104,7 +100,7 @@ export default function PostList({
               {post.excerpt && (
                 <p className="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400">
                   <Link
-                    href={`/post/${
+                    href={`/newsfeed/${
                       pathPrefix ? `${pathPrefix}/` : ""
                     }${post.slug.current}`}
                     legacyBehavior>

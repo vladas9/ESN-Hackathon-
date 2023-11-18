@@ -1,10 +1,13 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 /news-front/.next/
+/default-project
 # dependencies
 /news-front/node_modules
 /news-front/.pnp
 /news-front/.pnp.js
-
+/node_modules
+/package_lock.json
+/package.json
 # testing
 /news-front//coverage
 

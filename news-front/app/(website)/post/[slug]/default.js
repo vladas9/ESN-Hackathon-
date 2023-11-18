@@ -14,9 +14,9 @@ export default function Post(props) {
 
   const slug = post?.slug;
 
-  if (!loading && !slug) {
+  /*if (!loading && !slug) {
     notFound();
-  }
+  }*/
 
   const imageProps = post?.mainImage?.image
     // ? urlForImage(post?.mainImage)
