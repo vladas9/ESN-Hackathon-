@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 
+# GET PARTIES
 @app.route('/parties')
 def show_parties():
     conn = sqlite3.connect('main.db')
@@ -28,6 +29,7 @@ def show_parties():
     return parties_json
 
 
+# get party by name
 @app.route('/party/<party_name>', methods=['GET'])
 def get_party_profile(party_name):
     try:
