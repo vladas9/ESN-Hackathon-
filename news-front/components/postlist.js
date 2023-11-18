@@ -41,7 +41,7 @@ export default function PostList({
                 ? "aspect-[5/4]"
                 : "aspect-square"
             )}
-            href={`/newsfeed/001`}>
+            href={`/newsfeed/${pathPrefix ? `${pathPrefix}/` : ""}${post.slug.current}`}>
             {imageProps ? (
               <Image
                 src={imageProps}
@@ -82,7 +82,9 @@ export default function PostList({
                 "mt-2    dark:text-white"
               )}>
               <Link
-                href={`/newsfeed/001`}>
+                href={`/newsfeed/${pathPrefix ? `${pathPrefix}/` : ""}${
+                  post.slug.current
+                }`}>
                 <span
                   className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom
       bg-no-repeat
