@@ -1,0 +1,51 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/news-front/node_modules
+/news-front/.pnp
+/news-front/.pnp.js
+
+# testing
+/news-front//coverage
+
+# next.js
+/news-front//.next/
+/news-front//out/
+
+# production
+/news-front//build
+
+# misc
+.DS_Store
+/news-front/*.pem
+
+# debug
+/news-front/npm-debug.log*
+/news-front/yarn-debug.log*
+/news-front/yarn-error.log*
+
+# local env files
+/news-front/.env
+/news-front/.env.local
+/news-front/.env.development
+/news-front/.env.development.local
+/news-front/.env.test.local
+/news-front/.env.production
+/news-front/.env.production.local
+
+# vercel
+/news-front/.vercel
+
+# typescript
+/news-front/*.tsbuildinfo
+/news-front/next-env.d.ts
+
+# netlify
+/news-front/.netlify
+
+# Sanity CMS
+/news-front/.sanity
+/news-front/dist
+
+/news-front/.vscode
+
