@@ -24,24 +24,32 @@
 <body>
     <div id="__next">
         <script>!function () { try { var d = document.documentElement, c = d.classList; c.remove('light', 'dark'); var e = localStorage.getItem('theme'); if (e) { c.add(e || '') } else { c.add('light'); } if (e === 'light' || e === 'dark' || !e) d.style.colorScheme = e || 'light' } catch (t) { } }();</script>
-        <div class=" w-full px-5  bg-white border-b dark:bg-gray-900 dark:border-gray-700 z-10">
-            <nav class="flex items-center justify-between py-4">
+        <div class=" w-full px-5  bg-white border-b dark:bg-gray-900 dark:border-gray-700 z-10" style="position: fixed;">
+            <nav class="flex items-center justify-between py-4" >
                 <ul style="list-style:none;display: flex;justify-content: space-around;width:90%;margin: 0 auto;align-items: center;">
-                    <li><a href="/newsfeed">Newsfeed</a></li>
-                    <li><a href="/forum">Forum</a></li>
-                    <li><a href="/parties">Parties</a></li>
+                    <li><a class="nav-link" href="/newsfeed">Newsfeed</a></li>
+                    <li><a class="nav-link" href="/forum">Forum</a></li>
+                    <li><a class="nav-link" href="/parties">Parties</a></li>
                     <li style="font-size: 20px;font-weight: bold;">MDiaspora</li>
                 </ul>
-                
+            <style>
+                .nav-link{
+                    font-weight: 500;
+                    transition: 0.3s;
+                }
+                .nav-link:hover{
+                    color: rgb(150, 57, 237);
+                }
+            </style>
             </nav>
         </div>
         <div class="bg-gray-50 transition-all duration-1000 ">
             <div
                 class="transition-all max-w-full  mx-auto duration-1000 translate-[0]  h-[calc(100vh-4.563rem)]">
                 <div>
-                    <div class="container px-8 mx-auto xl:px-5  max-w-screen-lg py-5 lg:py-8">
+                    <div class="container px-8 mx-auto xl:px-5  max-w-screen-lg py-5 lg:py-8" style="padding-top: 100px;">
                         <div class="flex flex-col items-center justify-center">
-                            <div class="relative h-20 w-20 overflow-hidden rounded-full">
+                            <div style="border:1px solid black;" class="relative h-20 w-20 overflow-hidden rounded-full">
                                 <img src="data:image/png;base64,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"
                                 sizes="(max-width: 320px) 100vw, 320px"
                                 loading="lazy" decoding="async" data-nimg="fill" class="object-cover"
@@ -66,7 +74,7 @@
                                         href="/post/the-rise-of-artificial-intelligence-and-the-future-of-humans"><img
                                             alt="Thumbnail" loading="lazy" decoding="async" data-nimg="fill"
                                             class="object-cover transition-all" sizes="(max-width: 768px) 30vw, 33vw"
-                                            src=" https://ionceban.md/wp-content/uploads/2023/11/ion_ceban_man-2-300x257.jpg"
+                                            src="https://alternativa.eu/wp-content/uploads/bb-plugin/cache/photo_2022-12-29_20-02-18-1024x682-landscape.jpg"
                                             style="position: static; height: 100%; width: 100%; inset: 0px; color: transparent;"></a>
                                 </div>
                                 <div class="">
@@ -99,7 +107,14 @@
                                                 </div>
                                             </a><span class="text-xs text-gray-300 dark:text-gray-600">•</span><time
                                                 class="truncate text-sm" datetime="2022-10-18T13:47:00.000Z">October 18,
-                                                2022</time></div>
+                                                2022</time>
+                                            <div class="rate" style="display: flex; align-items: center;">
+                                               
+                                                <button ><img onclick="changePath()" class="up" style="width: 20px;height: 20px;" src="img/arrow-up.png" alt=""></button>
+                                                <span style="margin: 10px;" class="rating">12</span>
+                                                <button ><img class="down" style="width: 20px;height: 20px;" src="img/arrow-down.png" alt=""></button>
+                                                
+                                            </div></div>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +125,7 @@
                                         href="/post/the-rise-of-artificial-intelligence-and-the-future-of-humans"><img
                                             alt="Thumbnail" loading="lazy" decoding="async" data-nimg="fill"
                                             class="object-cover transition-all" sizes="(max-width: 768px) 30vw, 33vw"
-                                            src=" https://ionceban.md/wp-content/uploads/2023/11/ion_ceban_man-2-300x257.jpg"
+                                            src="https://alternativa.eu/wp-content/uploads/bb-plugin/cache/93869ec1-b4e0-4a9a-b91d-4f49f8d6513c-1-1024x683-landscape.jpeg"
                                             style="position: static; height: 100%; width: 100%; inset: 0px; color: transparent;"></a>
                                 </div>
                                 <div class="">
@@ -122,7 +137,8 @@
                                             class="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
                                             <a
                                                 href="/post/the-rise-of-artificial-intelligence-and-the-future-of-humans"><span
-                                                    class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">Mesaj de susținere pentru candidații MAN din suburbiile Capitalei. Ion Ceban: Am avut o campanie corectă concentrată pe angajamente concrete</span></a>
+                                                    class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">ION CEBAN: „PE 5 NOIEMBRIE TREBUIE SĂ NE MOBILIZĂM, CA A DOUA ZI SĂ REVENIM LA NORMAL ȘI SĂ RELUĂM PROIECTELE”
+                                                </span></a>
                                         </h2>
                                         <div class="hidden">
                                             <p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
@@ -143,18 +159,24 @@
                                                 </div>
                                             </a><span class="text-xs text-gray-300 dark:text-gray-600">•</span><time
                                                 class="truncate text-sm" datetime="2022-10-18T13:47:00.000Z">October 18,
-                                                2022</time></div>
+                                                2022</time>
+                                            <div class="rate" style="display: flex; align-items: center;">
+                                               
+                                                <button ><img onclick="changePath()" class="up" style="width: 20px;height: 20px;" src="img/arrow-up.png" alt=""></button>
+                                                <span style="margin: 10px;" class="rating">12</span>
+                                                <button ><img class="down" style="width: 20px;height: 20px;" src="img/arrow-down.png" alt=""></button>
+                                                
+                                            </div></div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="group cursor-pointer">
+                            </div><div class="group cursor-pointer">
                                 <div
                                     class=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
                                     <a class="relative block aspect-square"
                                         href="/post/the-rise-of-artificial-intelligence-and-the-future-of-humans"><img
                                             alt="Thumbnail" loading="lazy" decoding="async" data-nimg="fill"
                                             class="object-cover transition-all" sizes="(max-width: 768px) 30vw, 33vw"
-                                            src=" https://ionceban.md/wp-content/uploads/2023/11/ion_ceban_man-2-300x257.jpg"
+                                            src="https://alternativa.eu/wp-content/uploads/bb-plugin/cache/photo_2022-12-29_20-02-27-1024x682-landscape.jpg"
                                             style="position: static; height: 100%; width: 100%; inset: 0px; color: transparent;"></a>
                                 </div>
                                 <div class="">
@@ -166,7 +188,7 @@
                                             class="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
                                             <a
                                                 href="/post/the-rise-of-artificial-intelligence-and-the-future-of-humans"><span
-                                                    class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">Mesaj de susținere pentru candidații MAN din suburbiile Capitalei. Ion Ceban: Am avut o campanie corectă concentrată pe angajamente concrete</span></a>
+                                                    class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">LIDERUL MAN: ACTELE DE CORUPȚIE TREBUIE SANCȚIONATE MAI DUR</span></a>
                                         </h2>
                                         <div class="hidden">
                                             <p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
@@ -187,18 +209,24 @@
                                                 </div>
                                             </a><span class="text-xs text-gray-300 dark:text-gray-600">•</span><time
                                                 class="truncate text-sm" datetime="2022-10-18T13:47:00.000Z">October 18,
-                                                2022</time></div>
+                                                2022</time>
+                                            <div class="rate" style="display: flex; align-items: center;">
+                                               
+                                                <button ><img onclick="changePath()" class="up" style="width: 20px;height: 20px;" src="img/arrow-up.png" alt=""></button>
+                                                <span style="margin: 10px;" class="rating">51</span>
+                                                <button ><img class="down" style="width: 20px;height: 20px;" src="img/arrow-down.png" alt=""></button>
+                                                
+                                            </div></div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="group cursor-pointer">
+                            </div><div class="group cursor-pointer">
                                 <div
                                     class=" overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800">
                                     <a class="relative block aspect-square"
                                         href="/post/the-rise-of-artificial-intelligence-and-the-future-of-humans"><img
                                             alt="Thumbnail" loading="lazy" decoding="async" data-nimg="fill"
                                             class="object-cover transition-all" sizes="(max-width: 768px) 30vw, 33vw"
-                                            src=" https://ionceban.md/wp-content/uploads/2023/11/ion_ceban_man-2-300x257.jpg"
+                                            src="https://alternativa.eu/wp-content/uploads/bb-plugin/cache/f4847f47-7243-426b-9404-d20e0a678c9d-742x1024-landscape.jpeg"
                                             style="position: static; height: 100%; width: 100%; inset: 0px; color: transparent;"></a>
                                 </div>
                                 <div class="">
@@ -210,7 +238,7 @@
                                             class="text-lg font-semibold leading-snug tracking-tight mt-2    dark:text-white">
                                             <a
                                                 href="/post/the-rise-of-artificial-intelligence-and-the-future-of-humans"><span
-                                                    class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">Mesaj de susținere pentru candidații MAN din suburbiile Capitalei. Ion Ceban: Am avut o campanie corectă concentrată pe angajamente concrete</span></a>
+                                                    class="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px] dark:from-purple-800 dark:to-purple-900">ION CEBAN PROPUNE GUVERNULUI ȘI MINISTERULUI CULTURII DE A-ȘI UNI FORȚELE, ÎN ORGANIZAREA SĂRBĂTORILOR DE IARNĂ, ÎN CAPITALĂ</span></a>
                                         </h2>
                                         <div class="hidden">
                                             <p class="mt-2 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"><a
@@ -231,7 +259,14 @@
                                                 </div>
                                             </a><span class="text-xs text-gray-300 dark:text-gray-600">•</span><time
                                                 class="truncate text-sm" datetime="2022-10-18T13:47:00.000Z">October 18,
-                                                2022</time></div>
+                                                2022</time>
+                                            <div class="rate" style="display: flex; align-items: center;">
+                                               
+                                                <button ><img onclick="changePath()" class="up" style="width: 20px;height: 20px;" src="img/arrow-up.png" alt=""></button>
+                                                <span style="margin: 10px;" class="rating">30</span>
+                                                <button ><img class="down" style="width: 20px;height: 20px;" src="img/arrow-down.png" alt=""></button>
+                                                
+                                            </div></div>
                                     </div>
                                 </div>
                             </div>
