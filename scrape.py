@@ -21,6 +21,11 @@ def parse_individual_news(url):
     title_tag = soup.find('h1')
     title = title_tag.get_text(strip=True) if title_tag else 'No title'
 
+    archive_item_attrib = soup.find('p', class_="archive-item-atrib")
+    date_span = archive_item_attrib.find('span') if archive_item_attrib else None
+    date = date_span.get_text(strip=True) if date_span else 'No date'
+
+
     # Find the div with class 'normal-text' and extract all paragraphs' text
     info_div = soup.find('div', class_="normal-text")
     paragraphs_text = [p.get_text(strip=True) for p in info_div.find_all('p')] if info_div else ['No information']
@@ -39,6 +44,7 @@ def parse_individual_news(url):
 
     return {
         'title': title,
+        'date': date,
         'info': paragraphs_text,
         'images': images_src
     }
