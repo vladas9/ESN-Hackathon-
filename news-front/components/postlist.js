@@ -15,12 +15,12 @@ export default function PostList({
   fontSize,
   fontWeight
 }) {
-  const imageProps = post?.mainImage
-    ? urlForImage(post.mainImage)
-    : null;
+  const imageProps = post?.mainImage?.image
+    // ? urlForImage(post.mainImage)
+    // : null;
   const AuthorimageProps = post?.author?.image
-    ? urlForImage(post.author.image)
-    : null;
+    // ? urlForImage(post.author.image)
+    // : null;
   return (
     <>
       <div
@@ -46,7 +46,7 @@ export default function PostList({
             }`}>
             {imageProps ? (
               <Image
-                src={imageProps.src}
+                src={imageProps}
                 {...(post.mainImage.blurDataURL && {
                   placeholder: "blur",
                   blurDataURL: post.mainImage.blurDataURL
@@ -122,7 +122,8 @@ export default function PostList({
                   <div className="relative h-5 w-5 flex-shrink-0">
                     {post.author.image && (
                       <Image
-                        src={AuthorimageProps.src}
+                        //src={AuthorimageProps.src}
+                        src={AuthorimageProps}
                         alt={post?.author?.name}
                         className="rounded-full object-cover"
                         fill

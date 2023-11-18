@@ -13,7 +13,7 @@ export default function Post({ posts }) {
                 key={post._id}
                 post={post}
                 aspect="landscape"
-                preloadImage={true}
+                preloadImage={false}
               />
             ))}
           </div>

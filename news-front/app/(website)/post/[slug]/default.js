@@ -18,13 +18,13 @@ export default function Post(props) {
     notFound();
   }
 
-  const imageProps = post?.mainImage
-    ? urlForImage(post?.mainImage)
-    : null;
+  const imageProps = post?.mainImage?.image
+    // ? urlForImage(post?.mainImage)
+    // : null;
 
   const AuthorimageProps = post?.author?.image
-    ? urlForImage(post.author.image)
-    : null;
+    // ? urlForImage(post.author.image)
+    // : null;
 
   return (
     <>
@@ -79,7 +79,7 @@ export default function Post(props) {
       <div className="relative z-0 mx-auto aspect-video max-w-screen-lg overflow-hidden lg:rounded-lg">
         {imageProps && (
           <Image
-            src={imageProps.src}
+            src={post?.mainImage?.image}
             alt={post.mainImage?.alt || "Thumbnail"}
             loading="eager"
             fill
@@ -111,7 +111,7 @@ export default function Post(props) {
 const MainImage = ({ image }) => {
   return (
     <div className="mb-12 mt-12 ">
-      <Image {...urlForImage(image)} alt={image.alt || "Thumbnail"} />
+      <Image src={post?.mainImage.image} /**{...urlForImage(image)}**/ alt={image.alt || "Thumbnail"} />
       <figcaption className="text-center ">
         {image.caption && (
           <span className="text-sm italic text-gray-600 dark:text-gray-400">

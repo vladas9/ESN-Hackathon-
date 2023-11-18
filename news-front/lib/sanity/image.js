@@ -17,6 +17,8 @@ export const urlForImage = source => {
     .width(Math.min(width, "2000"))
     .url();
 
+  console.log("url ", url)  ;
+
   return {
     src: url,
     width: width,
