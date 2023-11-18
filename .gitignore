@@ -1,5 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+/news-front/.next/
 # dependencies
 /news-front/node_modules
 /news-front/.pnp
@@ -9,8 +9,8 @@
 /news-front//coverage
 
 # next.js
-/news-front//.next/
-/news-front//out/
+/news-front/.next/
+/news-front/out/
 
 # production
 /news-front//build

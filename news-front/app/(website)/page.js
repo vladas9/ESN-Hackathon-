@@ -31,7 +31,7 @@ export default async function IndexPage() {
     title: "Test Title",
     publishedAt: new Date(Date.now()).toISOString(),
     slug: {
-      current: "slug???"
+      current: "0001"
     },
     mainImage: {
       image: "https://www.tailwindtoolbox.com/products/tailus-alt.jpg",
@@ -48,7 +48,7 @@ export default async function IndexPage() {
     }
   };
   const posts = [
-    post, post, post, post  
+    post, post, post, post,post, post, post, post,post, post, post, post  
   ];
   return <HomePage posts={posts} />;
 }
