@@ -26,7 +26,8 @@ import { getAllPosts } from "@/lib/sanity/client";
  */
 
 export default async function IndexPage() {
-  const posts = await fetch('/news').then(req => req.json());
+  const posts = await fetch('http://localhost:5000/news').then(req => req.json());
+  console.log(posts);
   // const posts = await getAllPosts();
   // const post = {
   //   title: "Test Title",
