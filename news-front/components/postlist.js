@@ -82,9 +82,13 @@ export default function PostList({
                 "mt-2    dark:text-white"
               )}>
               <Link
+<<<<<<< HEAD
                 href={`/newsfeed/${pathPrefix ? `${pathPrefix}/` : ""}${
                   post.slug.current
                 }`}>
+=======
+                href={`/newsfeed/${pathPrefix ? `${pathPrefix}/` : ""}${post.slug.current}`}>
+>>>>>>> 2e996a0672af1c22364a2551862b249a26abc2f9
                 <span
                   className="bg-gradient-to-r from-green-200 to-green-100 bg-[length:0px_10px] bg-left-bottom
       bg-no-repeat
