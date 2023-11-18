@@ -7,6 +7,31 @@ from random import randint
 DATABASE = 'tesst.db'
 NR_OF_PARTIES = 2
 
+def get_party_object_by_id(id):
+    try:
+        with sqlite3.connect(DATABASE) as conn:
+            cursor = conn.cursor()
+
+            cursor.execute("SELECT * FROM parties WHERE id = ?", (id,))
+            party = cursor.fetchone()
+
+            if party:
+                party_object = {
+                    "id": party[0],
+                    "party_name": party[1],
+                    "party_logo": party[2],
+                    "party_description": party[3],
+                    "official_website": party[4]
+                }
+                return party_object
+            else:
+                return None
+    except sqlite3.Error as e:
+        print("An error occurred while fetching party details:", e)
+        return None
+
+
+
 def clear_table(table_name):
     try:
         with sqlite3.connect(DATABASE) as conn:
@@ -99,6 +124,7 @@ for new in news:
     add_news(random.randint(1, NR_OF_PARTIES), theme=new["title"], content=content_all, post_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S'), media_link=new["images"][0], rating=random.randint(2, 9))
 
 #
+
 
 
 # add_news(1, post_date=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
