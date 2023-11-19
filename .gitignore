@@ -10,7 +10,7 @@
 /package_lock.json
 /package.json
 # testing
-/news-front//coverage
+/news-front/coverage
 
 # next.js
 /news-front/.next/
