@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="next-head-count" content="2" />
+    <link rel="preload" href="2f3afc5640519b2d.css" as="style" />
+    <link rel="stylesheet" href="2f3afc5640519b2d.css" data-n-g="" /><noscript data-n-css=""></noscript>
+    <script defer="" nomodule="" src=" static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
+    <script src=" static/chunks/webpack-9ef757f748dfc16c.js" defer=""></script>
+    <script src=" static/chunks/framework-655eb5c4fbf4444e.js" defer=""></script>
+    <script src=" static/chunks/main-8e81eb2334a57aa7.js" defer=""></script>
+    <script src=" static/chunks/pages/_app-e00affc4b0af3383.js" defer=""></script>
+    <script src=" static/chunks/7148-52a6f0960d2ec7df.js" defer=""></script>
+    <script src=" static/chunks/9281-6f47bba2900c4292.js" defer=""></script>
+    <script src=" static/chunks/1624-97b4492ea8c78c66.js" defer=""></script>
+    <script src=" static/chunks/8543-88f82f2cdd93b8c5.js" defer=""></script>
+    <script src=" static/chunks/pages/preview/%5Bname%5D-0865c3be00c0dfcc.js" defer=""></script>
+    <script src=" static/xwGuzrSthf1hvfTLlKRok/_buildManifest.js" defer=""></script>
+    <script src=" static/xwGuzrSthf1hvfTLlKRok/_ssgManifest.js" defer=""></script>
+    <style>
+        body{
+            background-color: rgb(240, 240, 240);
+        }
+        .wrapper{
+            width: 70%;
+            margin: 0 auto;
+        }
+        form{
+            width: 100%;
+            background-color: rgb(248, 248, 248);
+            padding: 10px;
+            display: flex;
+            border-radius: 6px;
+            border: 1px solid rgb(164, 163, 163);
+        }
+        form input[type=text]{
+            border:none;
+            flex-grow: 1;
+        }
+        form input[type=text]:focus{
+            border: 1px solid gray;
+        }
+        form button{
+            font-weight: bold;
+            padding: 15px;
+            
+        }
+        .theme{
+            background-color: white;
+            margin: 15px 0 15px 0;
+            display: flex;
+            border-radius: 5px;
+            border: 1px solid lightgray;
+        }
+        .theme:hover{
+            cursor: pointer;
+            border:1px solid rgb(103, 103, 103);
+        }
+        .theme_rating{
+            font-weight: bold;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            background-color: #e0dddd;
+            align-items: center;
+        }
+        .theme_rating img{
+            width: 20px;
+            height: 20px;
+        }
+        .theme_content{
+            display: flex;
+            flex-direction: column;
+        }
+        .theme_content_author{
+            display: flex;
+            align-items: center;
+            padding: 5px 0 5px 10px;
+        }
+        .theme_content_author span{
+            color: gray;
+            margin: 5px;
+        }
+        .theme_content_author img{
+            
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+
+        }
+        .theme_content_actions{
+            display: flex;
+            color: gray;
+            margin: 5px;
+        }
+        .theme_content_text{
+            font-size: 26px;
+            font-weight: bold;
+            padding: 15px;
+        }
+        .theme_content_text a:hover{
+            text-decoration: underline;
+        }
+        .theme_content_actions div{
+            width: fit-content;
+            margin: 0 5px 0 5px;
+            display: flex;
+            align-items: center;
+        }
+        .comment_number,.share{
+            width: fit-content;
+            
+        }
+        .comment_number:hover,.share:hover{
+            background-color: #dfdbdb;
+        }
+        .comment_number img{
+            margin: 0 5px 0 0;
+            width: 15px;
+            height: 15px;
+        }
+        .share img{
+            margin: 0 5px 0 0;
+            width: 15px;
+            height: 15px;
+        }
+        .view_more{
+            font-size: 10px;
+            width: fit-content;
+            margin: 0 auto;
+            border: 1px solid lightgray;
+            border-radius: 7px;
+            padding: 10px;
+            color: rgb(168, 167, 167);
+            background-color: white;
+            transition: 0.2s;
+        }
+        .view_more:hover{
+            cursor: pointer;
+            background-color: #f6f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class=" w-full px-5  bg-white border-b dark:bg-gray-900 dark:border-gray-700 z-10" style="position: fixed;">
+        <nav class="flex items-center justify-between py-4" >
+            <ul style="list-style:none;display: flex;justify-content: space-around;width:90%;margin: 0 auto;align-items: center;">
+                <li><a class="nav-link" href="/newsfeed">Newsfeed</a></li>
+                <li><a class="nav-link" href="forum.html">Forum</a></li>
+                <li><a class="nav-link" href="/parties">Parties</a></li>
+                <li style="font-size: 20px;font-weight: bold;">MDiaspora</li>
+            </ul>
+        <style>
+            .nav-link{
+                font-weight: 500;
+                transition: 0.3s;
+            }
+            .nav-link:hover{
+                color: rgb(150, 57, 237);
+            }
+        </style>
+        </nav>
+    </div>
+    <div class="wrapper" style="padding: 100px;">
+        <div class="form">
+            <form action="">
+                <input type="text" placeholder="Propuneti o tema de dicutie">    
+                <button>Postati</button>
+            </form>
+            
+            
+        </div>
+        <div class="discussions">
+            <div class="theme">
+                <div class="theme_rating">
+                    <img src="img/arrow-up.png" alt="">
+                    <span>18</span>
+                    <img src="img/arrow-down.png" alt="">
+                </div>
+                <div class="theme_content">
+                    <div class="theme_content_author">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/ea7a3c32163929.567197ac70bda.png" alt="">
+                        <span class="username">Andrei Cebotari</span>
+                        <span>|</span>
+                        <span>October 21, 2023</span>
+                    </div>
+                    <div class="theme_content_text">
+                        <a href="">Cum credeti cine va fi urmatorul presedinte?</a>
+                    </div>
+                    <div class="theme_content_actions">
+                        <div class="comment_number">
+                            <img src="https://endoperio.com.br/wp-content/uploads/2015/02/comment-gray-icon.png" alt="">
+                            <span>38 Comments</span>
+                        </div>
+                        <div class="share">
+                            <img src="https://cdn0.iconfinder.com/data/icons/pack-web-app-game/512/share-512.png" alt="">
+                            <span>Share</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme">
+                <div class="theme_rating">
+                    <img src="img/arrow-up.png" alt="">
+                    <span>508</span>
+                    <img src="img/arrow-down.png" alt="">
+                </div>
+                <div class="theme_content">
+                    <div class="theme_content_author">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/b3053232163929.567197ac6e6f5.png" alt="">
+                        <span class="username">Fratele lui Andrei Cebotari</span>
+                        <span>|</span>
+                        <span>November 14, 2023</span>
+                    </div>
+                    <div class="theme_content_text">
+                        <a href="">Daca este cineva de la Ciocana puteti spune daca au mai terminat cu reparatiile?</a>
+                    </div>
+                    <div class="theme_content_actions">
+                        <div class="comment_number">
+                            <img src="https://endoperio.com.br/wp-content/uploads/2015/02/comment-gray-icon.png" alt="">
+                            <span>5 Comments</span>
+                        </div>
+                        <div class="share">
+                            <img src="https://cdn0.iconfinder.com/data/icons/pack-web-app-game/512/share-512.png" alt="">
+                            <span>Share</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme">
+                <div class="theme_rating">
+                    <img src="img/arrow-up.png" alt="">
+                    <span>5000</span>
+                    <img src="img/arrow-down.png" alt="">
+                </div>
+                <div class="theme_content">
+                    <div class="theme_content_author">
+                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/96be2232163929.567197ac6fb64.png" alt="">
+                        <span class="username">Unchiul lui Andrei Cebotari</span>
+                        <span>|</span>
+                        <span>September 14, 2022</span>
+                    </div>
+                    <div class="theme_content_text">
+                        <a href="">Cui ii este dor de vinul de casa?</a>
+                    </div>
+                    <div class="theme_content_actions">
+                        <div class="comment_number">
+                            <img src="https://endoperio.com.br/wp-content/uploads/2015/02/comment-gray-icon.png" alt="">
+                            <span>1045 Comments</span>
+                        </div>
+                        <div class="share">
+                            <img src="https://cdn0.iconfinder.com/data/icons/pack-web-app-game/512/share-512.png" alt="">
+                            <span>Share</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="view_more">View more</div>
+    </div>
+    
+</body>
+</html>
