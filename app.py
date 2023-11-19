@@ -1,53 +1,50 @@
 from flask import Flask, render_template, jsonify
 import sqlite3
 import json
+from add import get_party_object_by_id
 
 app = Flask(__name__)
+DATABASE = 'instance/mainDB.db'
 
-@app.route('/')
+@app.route('/', methods=['GET'])
+def index():
+    return "hello"
 
 # GET most recent news with comments
 @app.route('/news', methods=['GET'])
 def get_recent_news():
-    conn = sqlite3.connect('instance/mainDB.db')
+    conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
-    # Perform a LEFT JOIN to fetch the news and their comments, if any
-    cursor.execute('''
-        SELECT n.*, GROUP_CONCAT(c.message) FROM news n
-        LEFT JOIN comment c ON n.id = c.news_id
-        GROUP BY n.id
-        ORDER BY n.post_date DESC
-    ''')
+    cursor.execute('SELECT * FROM news')
     news_data = cursor.fetchall()
+    news_list = []
+
+    for new in news_data:
+        print(new)
+        party_dict = {
+            'id': new[0],
+            'party': get_party_object_by_id(new[1]),
+            'date': new[2],
+            'theme': new[3],
+            'rating': new[4],
+            "image": new[5],
+            "content": new[6]
+        }
+        news_list.append(party_dict)
     conn.close()
 
-    news_list = []
-    for news in news_data:
-        # Assuming the last column of the SELECT result is the concatenated comments
-        comments = news[-1]
-        comments_list = comments.split(',') if comments else []
-        news_list.append({
-            'party_id': news[1],
-            'post_date': news[2],
-            'theme_id': news[3],
-            'rating': news[4],
-            'media_link': news[5],
-            'comments': comments_list
-        })
-
-    return jsonify(news_list)
+    parties_json = json.dumps(news_list)
+    return parties_json
 
 # GET news by ID with comments
 @app.route('/news/<int:news_id>', methods=['GET'])
 def get_news_by_id(news_id):
-    conn = sqlite3.connect('main.db')
+    conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
     # Perform a LEFT JOIN to fetch the news item and its comments, if any
     cursor.execute('''
-        SELECT n.*, GROUP_CONCAT(c.comment_text) FROM news n
-        LEFT JOIN comment c ON n.id = c.news_id
-        WHERE n.id = ?
-        GROUP BY n.id
+        SELECT * from news
+    
     ''', (news_id,))
     news_item = cursor.fetchone()
     conn.close()
@@ -70,9 +67,9 @@ def get_news_by_id(news_id):
 # GET PARTIES
 @app.route('/parties')
 def show_parties():
-    conn = sqlite3.connect('main.db')
+    conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM party')
+    cursor.execute('SELECT * FROM parties')
     parties_data = cursor.fetchall()
     parties_list = []
 

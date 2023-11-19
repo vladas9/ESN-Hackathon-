@@ -48,14 +48,20 @@ def parse_individual_news(url):
         'info': paragraphs_text,
         'images': images_src
     }
-
 # Main function to get news
 def main():
+    print("hre")
     politics_news_url = "https://www.moldpres.md/news/politics"
     links = get_news_links(politics_news_url)
-    for link in links[:3]:  # Limit to the first 10 news articles
+
+    print("got news")
+    data_news = []
+    for link in links[:6]:  # Limit to the first 10 news articles
+        print("link")
         news_data = parse_individual_news(link)
-        print(news_data)
+        data_news.append(news_data)
+    return data_news
+
 
 if __name__ == "__main__":
     main()
